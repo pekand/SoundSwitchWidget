@@ -1,6 +1,6 @@
-﻿namespace SoundSwitch
+﻿namespace SoundSwitchWidget
 {
-    partial class FormSoundSwitch
+    partial class FormSoundSwitchWidget
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSoundSwitch));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSoundSwitchWidget));
             comboBox1 = new ComboBox();
             contextMenuStrip = new ContextMenuStrip(components);
             optionsToolStripMenuItem = new ToolStripMenuItem();
@@ -116,7 +116,7 @@
             instantProgressBar1.MouseMove += instantProgressBar1_MouseMove;
             instantProgressBar1.MouseUp += instantProgressBar1_MouseUp;
             // 
-            // FormSoundSwitch
+            // FormSoundSwitchWidget
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -126,14 +126,14 @@
             Controls.Add(comboBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "FormSoundSwitch";
+            Name = "FormSoundSwitchWidget";
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.Manual;
-            Text = "SoundSwitch";
-            Activated += FormSoundSwitch_Activated;
-            Deactivate += FormSoundSwitch_Deactivate;
-            FormClosing += FormSoundSwitch_FormClosing;
-            Load += FormSoundSwitch_Load;
+            Text = "SoundSwitchWidget";
+            Activated += FormSoundSwitchWidget_Activated;
+            Deactivate += FormSoundSwitchWidget_Deactivate;
+            FormClosing += FormSoundSwitchWidget_FormClosing;
+            Load += FormSoundSwitchWidget_Load;
             contextMenuStrip.ResumeLayout(false);
             ResumeLayout(false);
         }

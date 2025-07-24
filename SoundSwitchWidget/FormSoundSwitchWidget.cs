@@ -3,9 +3,9 @@ using NAudio.CoreAudioApi;
 using System.Diagnostics;
 using System.Xml.Linq;
 
-namespace SoundSwitch
+namespace SoundSwitchWidget
 {
-    public partial class FormSoundSwitch : Form
+    public partial class FormSoundSwitchWidget : Form
     {
         private MMDeviceEnumerator enumerator = new MMDeviceEnumerator();
         private MMDeviceCollection devices;
@@ -37,7 +37,7 @@ namespace SoundSwitch
         }
 
         // INIT
-        public FormSoundSwitch()
+        public FormSoundSwitchWidget()
         {
             InitializeComponent();
             LoadAudioDevices();
@@ -107,13 +107,13 @@ namespace SoundSwitch
         }
 
         //EVENT LOAD FORM
-        private void FormSoundSwitch_Load(object sender, EventArgs e)
+        private void FormSoundSwitchWidget_Load(object sender, EventArgs e)
         {
 
         }
 
         // EVENT ACTIVATE FORM
-        private void FormSoundSwitch_Activated(object sender, EventArgs e)
+        private void FormSoundSwitchWidget_Activated(object sender, EventArgs e)
         {
             LoadAudioDevices();
             instantProgressBar1.Value = vc.GetVolume();
@@ -161,7 +161,7 @@ namespace SoundSwitch
         }
 
         // EVENT DEACTIVATE FORM
-        private void FormSoundSwitch_Deactivate(object sender, EventArgs e)
+        private void FormSoundSwitchWidget_Deactivate(object sender, EventArgs e)
         {
             if (this.WindowState != FormWindowState.Minimized)
             {
@@ -178,7 +178,7 @@ namespace SoundSwitch
         }
 
         // EVENT FORM CLOSING
-        private void FormSoundSwitch_FormClosing(object sender, FormClosingEventArgs e)
+        private void FormSoundSwitchWidget_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (this.WindowState == FormWindowState.Minimized)
             {
@@ -199,7 +199,7 @@ namespace SoundSwitch
         // OPTIONS LOAD XML
         void LoadData()
         {
-            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "SoundSwitch", "options.xml");
+            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "SoundSwitchWidget", "options.xml");
 
             data.Clear();
 
@@ -224,7 +224,7 @@ namespace SoundSwitch
         // OPTIONS SAVE XML 
         void SaveData()
         {
-            string folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "SoundSwitch");
+            string folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "SoundSwitchWidget");
             Directory.CreateDirectory(folder);
             string path = Path.Combine(folder, "options.xml");
 

@@ -7,10 +7,10 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <Platforms>x64</Platforms>
-    <ApplicationIcon>SoundSwitch.ico</ApplicationIcon>
+    <ApplicationIcon>SoundSwitchWidget.ico</ApplicationIcon>
 
     <Product>SoundSwitchWidget</Product>
-    <AssemblyVersion>$([System.IO.File]::ReadAllText('..\version.txt').Trim())</AssemblyVersion>
+    <AssemblyVersion>$([System.IO.File]::ReadAllText('version.txt').Trim())</AssemblyVersion>
     <BuildDate>$([System.DateTime]::UtcNow.ToString("yyyy-MM-dd HH:mm:ss"))</BuildDate>    
     <VersionPrefix>$(AssemblyVersion)</VersionPrefix>
     <FileVersion>$(AssemblyVersion)</FileVersion>
@@ -22,7 +22,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="SoundSwitch.ico" />
+    <Content Include="SoundSwitchWidget.ico" />
   </ItemGroup>
 
   <ItemGroup>

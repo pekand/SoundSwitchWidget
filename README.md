@@ -1,11 +1,11 @@
-# 🎵 SoundSwitch
+# 🎵 SoundSwitchWidget
 
 A simple and efficient widget for Windows 11 that lets you **quickly switch between audio output devices** and **adjust the system volume** — all in one compact UI.
 
 
-![Screenshot of SoundSwitch UI](images/SoundSwitch.png)
+![Screenshot of SoundSwitchWidget UI](images/SoundSwitchWidget.png)
 
-![Screenshot of SoundSwitch UI as Widget without title bar](images/SoundSwitch-widget.png)
+![Screenshot of SoundSwitchWidget UI as Widget without title bar](images/SoundSwitchWidget-widget.png)
 
 
 ## ✨ Features

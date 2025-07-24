@@ -2,10 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "SoundSwitchWidget"
-#define MyAppVersion Trim(GetStringFile('version.txt'))
-#define MyAppPublisher "Success Company, s.r.o."
-#define MyAppURL "https://pekand.com/"
-#define MyAppExeName "SoundSwitch.exe"
+#define MyAppExeName "SoundSwitchWidget.exe"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -32,7 +29,7 @@ DisableProgramGroupPage=yes
 LicenseFile=LICENSE
 ; Uncomment the following line to run in non administrative install mode (install for current user only).
 ;PrivilegesRequired=lowest
-OutputBaseFilename=SoundSwitch-v{#MyAppVersion}
+OutputBaseFilename=SoundSwitchWidget-v{#MyAppVersion}
 SolidCompression=yes
 WizardStyle=modern
 
@@ -48,18 +45,18 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "SoundSwitch\bin\x64\Release\net9.0-windows\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "SoundSwitch\bin\x64\Release\net9.0-windows\NAudio.Asio.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "SoundSwitch\bin\x64\Release\net9.0-windows\NAudio.Core.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "SoundSwitch\bin\x64\Release\net9.0-windows\NAudio.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "SoundSwitch\bin\x64\Release\net9.0-windows\NAudio.Midi.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "SoundSwitch\bin\x64\Release\net9.0-windows\NAudio.Wasapi.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "SoundSwitch\bin\x64\Release\net9.0-windows\NAudio.WinForms.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "SoundSwitch\bin\x64\Release\net9.0-windows\NAudio.WinMM.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "SoundSwitch\bin\x64\Release\net9.0-windows\SoundSwitch.deps.json"; DestDir: "{app}"; Flags: ignoreversion
-Source: "SoundSwitch\bin\x64\Release\net9.0-windows\SoundSwitch.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "SoundSwitch\bin\x64\Release\net9.0-windows\SoundSwitch.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "SoundSwitch\bin\x64\Release\net9.0-windows\SoundSwitch.runtimeconfig.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "SoundSwitchWidget\bin\x64\Release\net9.0-windows\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "SoundSwitchWidget\bin\x64\Release\net9.0-windows\NAudio.Asio.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "SoundSwitchWidget\bin\x64\Release\net9.0-windows\NAudio.Core.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "SoundSwitchWidget\bin\x64\Release\net9.0-windows\NAudio.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "SoundSwitchWidget\bin\x64\Release\net9.0-windows\NAudio.Midi.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "SoundSwitchWidget\bin\x64\Release\net9.0-windows\NAudio.Wasapi.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "SoundSwitchWidget\bin\x64\Release\net9.0-windows\NAudio.WinForms.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "SoundSwitchWidget\bin\x64\Release\net9.0-windows\NAudio.WinMM.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "SoundSwitchWidget\bin\x64\Release\net9.0-windows\SoundSwitchWidget.deps.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "SoundSwitchWidget\bin\x64\Release\net9.0-windows\SoundSwitchWidget.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "SoundSwitchWidget\bin\x64\Release\net9.0-windows\SoundSwitchWidget.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "SoundSwitchWidget\bin\x64\Release\net9.0-windows\SoundSwitchWidget.runtimeconfig.json"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

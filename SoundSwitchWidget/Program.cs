@@ -1,4 +1,4 @@
-namespace SoundSwitch
+namespace SoundSwitchWidget
 {
     internal static class Program
     {
@@ -6,7 +6,7 @@ namespace SoundSwitch
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormSoundSwitch());
+            Application.Run(new FormSoundSwitchWidget());
         }
     }
 }

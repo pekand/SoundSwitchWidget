@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SoundSwitch
+namespace SoundSwitchWidget
 {
     public class InstantProgressBar : Control
     {

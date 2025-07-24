@@ -36,8 +36,8 @@ $tag = git describe --tags --abbrev=0
 Write-Output "TAG=>$tag<"
 
 $paths = @(
-    "SoundSwitch\bin\x64\Release\net9.0-windows\SoundSwitch.dll"
-    "SoundSwitch\bin\x64\Release\net9.0-windows\SoundSwitch.exe"
+    "SoundSwitchWidget\bin\x64\Release\net9.0-windows\SoundSwitchWidget.dll"
+    "SoundSwitchWidget\bin\x64\Release\net9.0-windows\SoundSwitchWidget.exe"
 )
 
 foreach ($path in $paths) {
@@ -58,7 +58,9 @@ foreach ($path in $paths) {
 
 ########################################
 Write-Output "################## BUILD PACKAGE"
-& $innoInstallPath /q SoundSwitch.iss -dAppVersion=%TAG%
+$version = Get-Content -Path ".\version.txt" -TotalCount 1
+Write-Output "################## VERSION $version" 
+& $innoInstallPath /q SoundSwitchWidget.iss /DMyAppVersion=$version /DMyAppPublisher="Success Company, s.r.o." /DMyAppURL="https://pekand.com/page/soundswitch"
 
 ########################################
 

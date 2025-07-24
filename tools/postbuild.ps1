@@ -42,9 +42,9 @@ Write-Host "CERT_PWD=>$CERT_PWD<"
 $CERT_STRONG_NAME = $env:CERT_STRONG_NAME
 Write-Host "CERT_STRONG_NAME=>$CERT_STRONG_NAME<"
 
-$TARGET1="${SolutionDir}SoundSwitch\${OutDir}SoundSwitch.exe"
+$TARGET1="${SolutionDir}SoundSwitchWidget\${OutDir}SoundSwitchWidget.exe"
 Write-Host "TARGET1=>$TARGET1<"
-$TARGET2="${SolutionDir}SoundSwitch\${OutDir}SoundSwitch.dll"
+$TARGET2="${SolutionDir}SoundSwitchWidget\${OutDir}SoundSwitchWidget.dll"
 Write-Host "TARGET2=>$TARGET2<"
 
 ### $snPath = 'sn.exe'

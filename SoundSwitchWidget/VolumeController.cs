@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NAudio.CoreAudioApi;
 
-namespace SoundSwitch
+namespace SoundSwitchWidget
 {
     public class VolumeController
     {
