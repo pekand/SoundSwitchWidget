@@ -48,7 +48,7 @@
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(12, 12);
+            comboBox1.Location = new Point(12, 13);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(282, 29);
             comboBox1.TabIndex = 0;
@@ -57,58 +57,58 @@
             // 
             contextMenuStrip.Items.AddRange(new ToolStripItem[] { optionsToolStripMenuItem, closeToolStripMenuItem });
             contextMenuStrip.Name = "contextMenuStrip1";
-            contextMenuStrip.Size = new Size(128, 52);
+            contextMenuStrip.Size = new Size(131, 52);
             contextMenuStrip.Opening += contextMenuStrip1_Opening;
             // 
             // optionsToolStripMenuItem
             // 
             optionsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { mostTopToolStripMenuItem, autorunToolStripMenuItem, showInTaskbarToolStripMenuItem, oppacityToolStripMenuItem });
             optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            optionsToolStripMenuItem.Size = new Size(127, 24);
+            optionsToolStripMenuItem.Size = new Size(130, 24);
             optionsToolStripMenuItem.Text = "Options";
             // 
             // mostTopToolStripMenuItem
             // 
             mostTopToolStripMenuItem.Name = "mostTopToolStripMenuItem";
-            mostTopToolStripMenuItem.Size = new Size(180, 24);
+            mostTopToolStripMenuItem.Size = new Size(182, 24);
             mostTopToolStripMenuItem.Text = "Most top";
             mostTopToolStripMenuItem.Click += mostTopToolStripMenuItem_Click;
             // 
             // autorunToolStripMenuItem
             // 
             autorunToolStripMenuItem.Name = "autorunToolStripMenuItem";
-            autorunToolStripMenuItem.Size = new Size(180, 24);
+            autorunToolStripMenuItem.Size = new Size(182, 24);
             autorunToolStripMenuItem.Text = "Autorun";
             autorunToolStripMenuItem.Click += autorunToolStripMenuItem_Click;
             // 
             // showInTaskbarToolStripMenuItem
             // 
             showInTaskbarToolStripMenuItem.Name = "showInTaskbarToolStripMenuItem";
-            showInTaskbarToolStripMenuItem.Size = new Size(180, 24);
+            showInTaskbarToolStripMenuItem.Size = new Size(182, 24);
             showInTaskbarToolStripMenuItem.Text = "Show in taskbar";
             showInTaskbarToolStripMenuItem.Click += showInTaskbarToolStripMenuItem_Click;
             // 
             // oppacityToolStripMenuItem
             // 
             oppacityToolStripMenuItem.Name = "oppacityToolStripMenuItem";
-            oppacityToolStripMenuItem.Size = new Size(180, 24);
+            oppacityToolStripMenuItem.Size = new Size(182, 24);
             oppacityToolStripMenuItem.Text = "Oppacity";
             oppacityToolStripMenuItem.Click += oppacityToolStripMenuItem_Click;
             // 
             // closeToolStripMenuItem
             // 
             closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            closeToolStripMenuItem.Size = new Size(127, 24);
+            closeToolStripMenuItem.Size = new Size(130, 24);
             closeToolStripMenuItem.Text = "Close";
             closeToolStripMenuItem.Click += closeToolStripMenuItem_Click;
             // 
             // instantProgressBar1
             // 
             instantProgressBar1.ContextMenuStrip = contextMenuStrip;
-            instantProgressBar1.Location = new Point(12, 47);
+            instantProgressBar1.Location = new Point(12, 49);
             instantProgressBar1.Minimum = 0;
             instantProgressBar1.Name = "instantProgressBar1";
-            instantProgressBar1.Size = new Size(282, 28);
+            instantProgressBar1.Size = new Size(282, 29);
             instantProgressBar1.TabIndex = 1;
             instantProgressBar1.Text = "instantProgressBar1";
             instantProgressBar1.Value = 0;
@@ -118,13 +118,13 @@
             // 
             // FormSoundSwitchWidget
             // 
-            AutoScaleDimensions = new SizeF(8F, 19F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(305, 83);
+            ClientSize = new Size(305, 87);
             ContextMenuStrip = contextMenuStrip;
             Controls.Add(instantProgressBar1);
             Controls.Add(comboBox1);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormSoundSwitchWidget";
             ShowInTaskbar = false;

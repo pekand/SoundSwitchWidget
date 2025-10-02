@@ -124,7 +124,7 @@ namespace SoundSwitchWidget
                 {
                     this.Left = leftPos;
                     this.Top = topPos;
-                    this.FormBorderStyle = FormBorderStyle.FixedSingle;
+                    this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
                     if (clientWidth == 0)
                     {
                         clientWidth = this.ClientSize.Width;
@@ -165,7 +165,7 @@ namespace SoundSwitchWidget
         {
             if (this.WindowState != FormWindowState.Minimized)
             {
-                if (this.FormBorderStyle == FormBorderStyle.FixedSingle)
+                if (this.FormBorderStyle == FormBorderStyle.FixedToolWindow)
                 {
                     leftPos = this.Left;
                     topPos = this.Top;
