@@ -92,6 +92,8 @@ namespace SoundSwitchWidget
             topPos = this.Top;
 
             comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
+
+            this.Visible = false;
         }
 
         // PREVENT MAXIMALIZE

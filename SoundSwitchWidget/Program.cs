@@ -9,6 +9,7 @@ namespace SoundSwitchWidget
         {
             ApplicationConfiguration.Initialize();
             Program.formSoundSwitchWidget = new FormSoundSwitchWidget();
+            Program.formSoundSwitchWidget.Hide();
             Application.Run(Program.formSoundSwitchWidget);
         }
     }
