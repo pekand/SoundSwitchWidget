@@ -10,12 +10,14 @@
     <ApplicationIcon>SoundSwitchWidget.ico</ApplicationIcon>
 
     <Product>SoundSwitchWidget</Product>
-    <AssemblyVersion>$([System.IO.File]::ReadAllText('version.txt').Trim())</AssemblyVersion>
+    <GitCommitHash Condition="'$(SourceRevisionId)' != ''">$(SourceRevisionId.Substring(0, 8))</GitCommitHash>
+    <AssemblyVersion>$([System.IO.File]::ReadAllText('version.txt').Trim() +'.'+GitCommitHash)</AssemblyVersion>    
     <BuildDate>$([System.DateTime]::UtcNow.ToString("yyyy-MM-dd HH:mm:ss"))</BuildDate>    
     <VersionPrefix>$(AssemblyVersion)</VersionPrefix>
     <FileVersion>$(AssemblyVersion)</FileVersion>
-    <InformationalVersion>$(AssemblyVersion)</InformationalVersion>
-    <Copyright>© 2025 Built on $(BuildDate)</Copyright>
+    <InformationalVersion>$(AssemblyVersion).$(GitCommitHash)</InformationalVersion>
+    <Copyright>© 2025 Built on $(BuildDate) (Git: $(GitCommitHash))</Copyright>
+
     <ContinuousIntegrationBuild>false</ContinuousIntegrationBuild>
     <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
 

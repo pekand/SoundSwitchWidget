@@ -2,6 +2,7 @@ using Microsoft.Win32;
 using NAudio.CoreAudioApi;
 using System.Diagnostics;
 using System.Xml.Linq;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace SoundSwitchWidget
 {
@@ -29,6 +30,8 @@ namespace SoundSwitchWidget
         int leftPos = 0;
         int topPos = 0;
 
+        AdvancedAudioMonitor monitor;
+
         class AudioDeviceItem
         {
             public string Name { get; set; }
@@ -42,8 +45,7 @@ namespace SoundSwitchWidget
             InitializeComponent();
             LoadAudioDevices();
             vc.SetCurrentDevice();
-
-            instantProgressBar1.Value = vc.GetVolume();
+            volumeProgressBar.Value = vc.GetVolume();
 
             LoadData();
 
@@ -91,9 +93,48 @@ namespace SoundSwitchWidget
             leftPos = this.Left;
             topPos = this.Top;
 
-            comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
+            devicesComboBox.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
+
+            MonitorInit();
 
             this.Visible = false;
+        }
+
+        public void MonitorInit() {
+            try
+            {
+                Action deviceChangeHandler = UpdateDevices;
+                Action volumeChangeHandler = UpdateVolume;
+                monitor = new(deviceChangeHandler, volumeChangeHandler);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Chyba pri inicializácii monitora: {ex.Message}");
+            }
+        }
+
+        // STATE 
+        public void UpdateDevices()
+        {
+            if (volumeProgressBar.InvokeRequired)
+            {
+                volumeProgressBar.BeginInvoke(new Action(UpdateDevices));
+                return;
+            }
+
+            LoadAudioDevices();
+            volumeProgressBar.Value = vc.GetVolume();
+        }
+
+        public void UpdateVolume()
+        {
+            if (volumeProgressBar.InvokeRequired)
+            {
+                volumeProgressBar.BeginInvoke(new Action(UpdateVolume));
+                return;
+            }
+
+            volumeProgressBar.Value = vc.GetVolume();
         }
 
         // PREVENT MAXIMALIZE
@@ -115,10 +156,10 @@ namespace SoundSwitchWidget
         }
 
         // EVENT ACTIVATE FORM
-        private void FormSoundSwitchWidget_Activated(object sender, EventArgs e)
+        public void FormSoundSwitchWidget_Activated(object sender, EventArgs e)
         {
             LoadAudioDevices();
-            instantProgressBar1.Value = vc.GetVolume();
+            volumeProgressBar.Value = vc.GetVolume();
 
             if (this.WindowState != FormWindowState.Minimized)
             {
@@ -198,6 +239,7 @@ namespace SoundSwitchWidget
             SaveData();
         }
 
+
         // OPTIONS LOAD XML
         void LoadData()
         {
@@ -268,19 +310,19 @@ namespace SoundSwitchWidget
             if (somethingChange) {
                 devices = currentDevices;
                 selectedDevice = currentDevice;
-                comboBox1.Items.Clear();
+                devicesComboBox.Items.Clear();
                 
                 for (int i = 0; i < devices.Count; i++)
                 {
                     var device = devices[i];
-                    comboBox1.Items.Add(new AudioDeviceItem
+                    devicesComboBox.Items.Add(new AudioDeviceItem
                     {
                         Name = device.FriendlyName,
                         Id = device.ID
                     });
 
                     if (device.ID == currentDevice.ID)
-                        comboBox1.SelectedIndex = i;
+                        devicesComboBox.SelectedIndex = i;
                 }
             }
         }
@@ -288,7 +330,7 @@ namespace SoundSwitchWidget
         // COMBOBX AUDIO DEVICES LIST
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem is AudioDeviceItem selected)
+            if (devicesComboBox.SelectedItem is AudioDeviceItem selected)
             {
                 AudioDeviceSwitcher.SetDefaultDevice(selected.Id);
                 vc.SetCurrentDevice();
@@ -299,13 +341,13 @@ namespace SoundSwitchWidget
         // VOLUME PROGRESSBAR UPDATE
         private void UpdateProgressBarValue(int mouseX)
         {
-            int width = instantProgressBar1.Width;
-            int value = mouseX * (instantProgressBar1.Maximum - instantProgressBar1.Minimum) / width;
+            int width = volumeProgressBar.Width;
+            int value = mouseX * (volumeProgressBar.Maximum - volumeProgressBar.Minimum) / width;
 
-            if (value < instantProgressBar1.Minimum) value = instantProgressBar1.Minimum;
-            if (value > instantProgressBar1.Maximum) value = instantProgressBar1.Maximum;
+            if (value < volumeProgressBar.Minimum) value = volumeProgressBar.Minimum;
+            if (value > volumeProgressBar.Maximum) value = volumeProgressBar.Maximum;
 
-            instantProgressBar1.Value = value;
+            volumeProgressBar.Value = value;
 
             vc.SetVolume(value);
         }

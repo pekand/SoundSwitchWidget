@@ -30,7 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSoundSwitchWidget));
-            comboBox1 = new ComboBox();
+            devicesComboBox = new ComboBox();
             contextMenuStrip = new ContextMenuStrip(components);
             optionsToolStripMenuItem = new ToolStripMenuItem();
             mostTopToolStripMenuItem = new ToolStripMenuItem();
@@ -38,20 +38,20 @@
             showInTaskbarToolStripMenuItem = new ToolStripMenuItem();
             oppacityToolStripMenuItem = new ToolStripMenuItem();
             closeToolStripMenuItem = new ToolStripMenuItem();
-            instantProgressBar1 = new InstantProgressBar();
+            volumeProgressBar = new InstantProgressBar();
             contextMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
             // comboBox1
             // 
-            comboBox1.ContextMenuStrip = contextMenuStrip;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(12, 13);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(282, 29);
-            comboBox1.TabIndex = 0;
+            devicesComboBox.ContextMenuStrip = contextMenuStrip;
+            devicesComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            devicesComboBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            devicesComboBox.FormattingEnabled = true;
+            devicesComboBox.Location = new Point(12, 13);
+            devicesComboBox.Name = "comboBox1";
+            devicesComboBox.Size = new Size(282, 29);
+            devicesComboBox.TabIndex = 0;
             // 
             // contextMenuStrip
             // 
@@ -104,17 +104,17 @@
             // 
             // instantProgressBar1
             // 
-            instantProgressBar1.ContextMenuStrip = contextMenuStrip;
-            instantProgressBar1.Location = new Point(12, 49);
-            instantProgressBar1.Minimum = 0;
-            instantProgressBar1.Name = "instantProgressBar1";
-            instantProgressBar1.Size = new Size(282, 29);
-            instantProgressBar1.TabIndex = 1;
-            instantProgressBar1.Text = "instantProgressBar1";
-            instantProgressBar1.Value = 0;
-            instantProgressBar1.MouseDown += instantProgressBar1_MouseDown;
-            instantProgressBar1.MouseMove += instantProgressBar1_MouseMove;
-            instantProgressBar1.MouseUp += instantProgressBar1_MouseUp;
+            volumeProgressBar.ContextMenuStrip = contextMenuStrip;
+            volumeProgressBar.Location = new Point(12, 49);
+            volumeProgressBar.Minimum = 0;
+            volumeProgressBar.Name = "instantProgressBar1";
+            volumeProgressBar.Size = new Size(282, 29);
+            volumeProgressBar.TabIndex = 1;
+            volumeProgressBar.Text = "instantProgressBar1";
+            volumeProgressBar.Value = 0;
+            volumeProgressBar.MouseDown += instantProgressBar1_MouseDown;
+            volumeProgressBar.MouseMove += instantProgressBar1_MouseMove;
+            volumeProgressBar.MouseUp += instantProgressBar1_MouseUp;
             // 
             // FormSoundSwitchWidget
             // 
@@ -122,8 +122,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(305, 87);
             ContextMenuStrip = contextMenuStrip;
-            Controls.Add(instantProgressBar1);
-            Controls.Add(comboBox1);
+            Controls.Add(volumeProgressBar);
+            Controls.Add(devicesComboBox);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormSoundSwitchWidget";
@@ -140,8 +140,8 @@
 
         #endregion
 
-        private ComboBox comboBox1;
-        private InstantProgressBar instantProgressBar1;
+        private ComboBox devicesComboBox;
+        private InstantProgressBar volumeProgressBar;
         private ContextMenuStrip contextMenuStrip;
         private ToolStripMenuItem closeToolStripMenuItem;
         private ToolStripMenuItem optionsToolStripMenuItem;
