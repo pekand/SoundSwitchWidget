@@ -11,7 +11,7 @@
 
     <Product>SoundSwitchWidget</Product>
     <GitCommitHash Condition="'$(SourceRevisionId)' != ''">$(SourceRevisionId.Substring(0, 8))</GitCommitHash>
-    <AssemblyVersion>$([System.IO.File]::ReadAllText('version.txt').Trim() +'.'+GitCommitHash)</AssemblyVersion>    
+    <AssemblyVersion>$([System.IO.File]::ReadAllText('version.txt').Trim())</AssemblyVersion>
     <BuildDate>$([System.DateTime]::UtcNow.ToString("yyyy-MM-dd HH:mm:ss"))</BuildDate>    
     <VersionPrefix>$(AssemblyVersion)</VersionPrefix>
     <FileVersion>$(AssemblyVersion)</FileVersion>
