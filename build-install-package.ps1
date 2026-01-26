@@ -62,8 +62,8 @@ $tag = git describe --tags --abbrev=0
 Write-Output "TAG=>$tag<"
 
 $paths = @(
-    "SoundSwitchWidget\bin\x64\Release\net9.0-windows\SoundSwitchWidget.dll"
-    "SoundSwitchWidget\bin\x64\Release\net9.0-windows\SoundSwitchWidget.exe"
+    "SoundSwitchWidget\bin\x64\Release\net8.0-windows7.0\SoundSwitchWidget.dll"
+    "SoundSwitchWidget\bin\x64\Release\net8.0-windows7.0\SoundSwitchWidget.exe"
 )
 
 foreach ($path in $paths) {
